@@ -19,7 +19,7 @@ getHomeR :: Handler Html
 -- layout, which includes a basic HTML 5 page outline.
 getHomeR = defaultLayout $ do
     -- Set the HTML <title> tag.
-    setTitle "Yesod Web Service Homepage"
+    setTitle "Starter - Start your experiments!"
 
     -- Include some CDN-hosted Javascript and CSS to make our page a little nicer.
     addScriptRemote "//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"
@@ -33,9 +33,16 @@ getHomeR = defaultLayout $ do
     [whamlet|
         <div .container-fluid>
           <div .row-fluid>
-            <h1>Welcome to the web service
-        
+            <h1>Welcome to the chess service
+
           <div .row-fluid>
+            <div .span6>
+                    <h2>Uptime
+                    <p><textarea #uptime>
+            <div .span6>
+                    <h2>Running
+                    <p><textarea #running>
+
             <div .span6>
                 <h2>Fibs
                 <p>
@@ -72,6 +79,8 @@ getHomeR = defaultLayout $ do
             padding: 0.5em;
             background: #cfc;
         }
+        #uptime {width: 100%; height: 30px;}
+        #running {width: 100%; height: 500px;}
     |]
     toWidget [julius|
         function updateFib() {
