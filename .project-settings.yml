@@ -13,6 +13,8 @@ hidden-packages: ''
 modules:
   Foundation:
     filename: src/Foundation.hs
+  Logic:
+    filename: src/Logic.hs
   Handler.Home:
     filename: src/Handler/Home.hs
   Handler.Markdown:
